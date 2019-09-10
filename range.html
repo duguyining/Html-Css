@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义进度条</title>
+    <style>
+        .range{
+            --color:red;
+            --position:50%;
+            width: 200px;
+            height: 10px;
+            border-radius: 30px;
+            background-color: #ccc;
+            background-image: radial-gradient(closest-side circle at var(--position),var(--color),var(--color) 100%,transparent),linear-gradient(var(--color),var(--color));
+            background-image:-webkit-radial-gradient(var(--position),circle closest-side,var(--color),var(--color) 100%,transparent),-webkit-linear-gradient(var(--color),var(--color));
+            background-size:100% ,var(--position);
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="range" id="diy_range"></div>
+</body>
+</html>
