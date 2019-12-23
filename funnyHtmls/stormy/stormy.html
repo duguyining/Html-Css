@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闪电</title>
+    <style>
+        body{
+            background: rgba(73,74,95,1);
+        }
+        .container{
+            width: 70px;
+            height: 170px;
+            position: relative;
+            margin: 250px auto;
+        }
+        .stormy {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 80px;
+            top: 70px;
+            margin-left: -60px;
+            background: #222;
+            border-radius: 50%;
+            box-shadow: #222 64px -15px 0 -5px,
+            #222 25px -25px,
+            #222 30px 10px,
+            #222 60px 15px 0 -10px,
+            #222 85px 5px 0 -5px;
+            animation: stormy 5s ease-in-out infinite;
+        }
+        @keyframes stormy{
+            50%{
+                transform: translateY(-20px);
+            }
+        }
+        .stormy::after{
+            content: '';
+            width: 120px;
+            height: 15px;
+            position: absolute;
+            left: 5px;
+            bottom: -60px;
+            background: #000;
+            border-radius: 50%;
+            opacity: 0.2;
+            transform: scale(0.7);
+            animation: stormy_shadow 5s ease-in-out infinite;
+        }
+
+        @keyframes stormy_shadow{
+            50%{
+                transform: translateY(20px) scale(1);
+                opacity: 0.05;
+            }
+        }
+        .stormy::before{
+            display: block;
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: 57px;
+            top: 70px;
+            border-left:  0px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 43px solid yellow;
+            box-shadow: yellow -7px -32px;
+            transform:  rotate(14deg);
+            transform-origin: 50% -60px;
+            animation: stormy_thunder 2s steps(1, end) infinite;
+        }
+
+        @keyframes stormy_thunder{
+            0%{
+                transform: rotate(20deg);
+                opacity: 1;
+            }
+            5%{
+                transform: rotate(-34deg);
+                opacity: 1;
+            }
+            10%{
+                transform: rotate(0deg);
+                opacity: 1;
+            }
+            15%{
+                transform: rotate(-34deg);
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stormy"></div>
+    </div>
+</body>
+</html>
