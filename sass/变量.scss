@@ -1,0 +1,38 @@
+// sass变量
+$myFont: Helvetica, sans-serif;
+$myColor: red;
+$myFontSize: 18px;
+$myWidth: 680px;
+
+body {
+  font-family: $myFont;
+  font-size: $myFontSize;
+  color: $myColor;
+}
+
+#container {
+  width: $myWidth;
+}
+
+// sass作用域
+$myColor: red;
+
+h1 {
+  $myColor: green;   // 只在 h1 里头有用，局部作用域
+  color: $myColor;
+}
+
+p {
+  color: $myColor;
+}
+/* !global关键词来设置变量是全局的 */
+$myColor: red;
+
+h1 {
+  $myColor: green !global;  // 全局作用域
+  color: $myColor;
+}
+
+p {
+  color: $myColor;
+}
